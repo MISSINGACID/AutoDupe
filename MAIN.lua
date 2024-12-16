@@ -1,5 +1,5 @@
 queueteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
-wait(10)
+wait()
 queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/MISSINGACID/AutoDupe/refs/heads/main/MAIN.lua'))()")
 local selectedtp = game.Players.VickynL1.Character.HumanoidRootPart
 
@@ -87,7 +87,7 @@ end
         [2] = "\255"
     }
     game:GetService("ReplicatedStorage"):WaitForChild("GeneralEvents"):WaitForChild("ChangeKeybind"):FireServer(unpack(args2))
-    wait(2)
+    wait(10)
 
     -- Fire the Inventory event
     local args3 = {
