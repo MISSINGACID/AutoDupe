@@ -1,7 +1,7 @@
 queueteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
 wait(5)
 queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/MISSINGACID/AutoDupe/refs/heads/main/MAIN.lua'))()")
-local selectedtp = game.Players.MRnameLezzz.Character.HumanoidRootPart
+local selectedtp = game.Players.VickynL1.Character.HumanoidRootPart
 
 local function getGroundPosition(position)
     local direction = Vector3.new(0, -300, 0) -- Raycast direction
