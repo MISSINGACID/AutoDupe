@@ -96,6 +96,12 @@ end
     }
     game:GetService("ReplicatedStorage"):WaitForChild("GeneralEvents"):WaitForChild("Inventory"):InvokeServer(unpack(args3))
     wait(2)  -- Wait for inventory action to complete
+    local args2 = {
+        [1] = 3,
+        [2] = "\255"
+    }
+    game:GetService("ReplicatedStorage"):WaitForChild("GeneralEvents"):WaitForChild("ChangeKeybind"):FireServer(unpack(args2))
+    wait(2)
 game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
 
 -- Queue the code to run after teleportation
