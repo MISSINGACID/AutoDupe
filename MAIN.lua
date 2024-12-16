@@ -1,5 +1,5 @@
 queueteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
-wait(5)
+wait(10)
 queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/MISSINGACID/AutoDupe/refs/heads/main/MAIN.lua'))()")
 local selectedtp = game.Players.VickynL1.Character.HumanoidRootPart
 
