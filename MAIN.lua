@@ -65,8 +65,8 @@ end
 -- Code to run after teleport
 
 local args = {
-    [1] = "Quarry",
-    [2] = false,
+    [1] = "RedRocks",
+    [2] = true,
     [3] = false
 }
 
