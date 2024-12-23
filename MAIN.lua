@@ -1,7 +1,7 @@
 queueteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
-wait()
+wait(5)
 queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/MISSINGACID/AutoDupe/refs/heads/main/MAIN.lua'))()")
-local selectedtp = game.Players.VickynL1.Character.HumanoidRootPart
+local selectedtp = game.Players.McFlurry0k.Character.HumanoidRootPart
 
 local function getGroundPosition(position)
     local direction = Vector3.new(0, -300, 0) -- Raycast direction
@@ -64,14 +64,14 @@ end
 
 -- Code to run after teleport
 
-    local args1 = {
-        [1] = "FortArthur",
-        [2] = true,
-        [3] = false
-    }
+local args = {
+    [1] = "Quarry",
+    [2] = false,
+    [3] = false
+}
 
-    -- Fire the Spawn event
-    game:GetService("ReplicatedStorage"):WaitForChild("GeneralEvents"):WaitForChild("Spawn"):FireServer(unpack(args1))
+game:GetService("ReplicatedStorage"):WaitForChild("GeneralEvents"):WaitForChild("Spawn"):FireServer(unpack(args))
+
     wait(0.5)  -- Wait for spawn to complete
 
     -- Wait for the player character to load
@@ -80,14 +80,14 @@ end
 
     -- Interpolate to the target position smoothly
     interpolateToTarget()
-
+    wait(3)
     -- Fire the ChangeKeybind event
     local args2 = {
         [1] = 3,
         [2] = "\255"
     }
     game:GetService("ReplicatedStorage"):WaitForChild("GeneralEvents"):WaitForChild("ChangeKeybind"):FireServer(unpack(args2))
-    wait(10)
+    wait(3)  -- Wait for keybind change to complete
 
     -- Fire the Inventory event
     local args3 = {
@@ -95,13 +95,7 @@ end
         [2] = "asd"
     }
     game:GetService("ReplicatedStorage"):WaitForChild("GeneralEvents"):WaitForChild("Inventory"):InvokeServer(unpack(args3))
-    wait(2)  -- Wait for inventory action to complete
-    local args2 = {
-        [1] = 3,
-        [2] = "\255"
-    }
-    game:GetService("ReplicatedStorage"):WaitForChild("GeneralEvents"):WaitForChild("ChangeKeybind"):FireServer(unpack(args2))
-    wait(2)
+    wait(0.5)  -- Wait for inventory action to complete
 game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
 
 -- Queue the code to run after teleportation
